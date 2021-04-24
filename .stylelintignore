@@ -1,0 +1,10 @@
+/vendor/
+/node_modules/
+**/_normalize.scss
+**/bootstrap/**/*.scss
+**/*.css
+**/*/_font-face.scss
+**/*/mobiscroll.angularjs.scss
+resources/assets/mobile/sass/safe-area.scss
+resources/assets/sass/utilities/mixins/_pdf-mixins.scss
+
