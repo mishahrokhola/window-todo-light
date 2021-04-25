@@ -1,4 +1,6 @@
-const { app, BrowserWindow } = require('electron');
+const { app, ipcMain, BrowserWindow } = require('electron');
+
+const fs = require('fs');
 const url = require('url');
 const path = require('path');
 
@@ -24,7 +26,7 @@ function createWindow() {
 	);
 
 	// Open the DevTools.
-	// mainWindow.webContents.openDevTools();
+	mainWindow.webContents.openDevTools();
 
 	mainWindow.removeMenu();
 
@@ -43,4 +45,26 @@ app.on('window-all-closed', function () {
 
 app.on('activate', function () {
 	if (mainWindow === null) createWindow();
+});
+
+ipcMain.handle('loadData', async (event, fileName) => {
+	const userDataPath = app.getPath('userData');
+	this.path = path.join(userDataPath, `${fileName}.json`);
+
+	try {
+		const data = fs.readFileSync(this.path, 'utf-8');
+
+		return data.length > 0 ? JSON.parse(data) : null;
+	} catch (e) {
+		return null;
+	}
+});
+
+ipcMain.handle('saveData', async (event, fileName, data) => {
+	const userDataPath = app.getPath('userData');
+	this.path = path.join(userDataPath, `${fileName}.json`);
+
+	fs.writeFileSync(this.path, JSON.stringify(data), 'utf-8');
+
+	return 'OK';
 });

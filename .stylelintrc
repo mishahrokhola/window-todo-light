@@ -24,13 +24,6 @@
         "declaration-colon-newline-after": "always-multi-line",
         "declaration-colon-space-after": "always-single-line",
         "declaration-colon-space-before": "never",
-        "declaration-property-unit-blacklist": {
-            "line-height": ["px"],
-            "transition": ["ms", "s"],
-            "transition-duration": ["ms", "s"],
-            "animation": ["ms", "s"],
-            "animation-duration": ["ms", "s"]
-        },
         "declaration-property-value-blacklist": {
             "border": [
                 "none"
@@ -226,8 +219,6 @@
             [
                 "/color/",
                 "background-color",
-                "font-family",
-                "stroke",
                 {
                     "ignoreValues": [
                         "/^darken/",

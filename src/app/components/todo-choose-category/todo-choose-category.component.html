@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Choose category</h1>
+
+<div>
+	<mat-radio-group *ngIf="!isLoading" class="u-flex--column" [formControl]="category">
+		<mat-radio-button class="m-b-5" *ngFor="let item of categories" [value]="item.id">
+			{{ item.title }}
+		</mat-radio-button>
+	</mat-radio-group>
+</div>
+
+<div mat-dialog-actions>
+	<button mat-button mat-dialog-close>Close</button>
+	<button mat-button [disabled]="!category.value" [mat-dialog-close]="category.value">Add</button>
+</div>

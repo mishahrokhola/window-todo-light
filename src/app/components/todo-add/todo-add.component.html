@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add todo</h1>
+
+<form [formGroup]="todoForm">
+	<mat-form-field>
+		<mat-label>Label</mat-label>
+		<input type="text" matInput formControlName="label" placeholder="My todo" />
+		<mat-error *ngIf="label?.hasError('required')">Label is required</mat-error>
+	</mat-form-field>
+</form>
+
+<div mat-dialog-actions>
+	<button mat-button mat-dialog-close>Close</button>
+	<button mat-button [disabled]="todoForm.invalid" (click)="handleSubmit()">Add</button>
+</div>

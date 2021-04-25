@@ -1,5 +1,5 @@
 {
-	"extends": ["tslint:latest", "tslint-angular", "tslint-eslint-rules", "tslint-config-prettier"],
+	"extends": ["tslint:latest", "tslint-angular", "tslint-config-prettier"],
 	"rules": {
 		"typedef": [true, "parameter", "call-signature"],
 		"no-implicit-dependencies": [true, "dev", ["app"]],
