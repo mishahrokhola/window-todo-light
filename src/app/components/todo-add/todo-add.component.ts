@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DateTime } from 'luxon';
 
 import { TodoItem, TodoItemAddEvent, TodoItemDialogData } from '../../interfaces/todo.interfaces';
 import { UniqueIdService } from '../../services/unique-id/unique-id.service';
@@ -36,7 +35,7 @@ export class TodoAddComponent {
 		return {
 			id: this.uniqueIdService.uniqueId(),
 			label: this.label?.value,
-			date: DateTime.now().startOf('days').toString(),
+			date: this.data.date,
 			isFinished: false,
 			categoryId: this.data.categoryId,
 			files: [],

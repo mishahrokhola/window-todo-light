@@ -9,6 +9,7 @@ export interface TodoItem {
 }
 
 export interface TodoItemDialogData {
+	date: string;
 	categoryId: number;
 }
 

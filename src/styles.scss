@@ -1,13 +1,13 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'assets/scss/general';
 
 html,
 body {
 	height: 100%;
+	background: $color-white;
 }
 
 body {
 	margin: 0;
 	font-family: 'Roboto', 'Helvetica Neue', sans-serif;
 }
-
-@import 'assets/scss/general';
